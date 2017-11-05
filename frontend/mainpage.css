@@ -1,16 +1,50 @@
-body 
-{
-    background-color: lightblue;
+#wrapper {
+    width: 980px;
+    margin: 0 auto;
+    background: #fff;
+    padding-bottom: 10px;
 }
 
-h1 
-{
-    color: white;
-    text-align: center;
+.pagemenu {
+	margin: 0 0 50px 0;
+	background-color: #000;
+	height: 31x;
+	padding: 0 0 0 0;
 }
 
-p 
-{
-    font-family: verdana;
-    font-size: 20px;
+#content {
+    clear: both;
+    height: 100%;
+    overflow: hidden;
+}
+
+#main {
+    float: right;
+    width: 655px;
+}
+
+#sidebar {
+    float: left;
+    width: 282px;
+    background: #fff;
+    height: 100%;
+    overflow: hidden;
+}
+
+#wrapper-in {
+    padding: 5px;
+}
+
+#menu-mainmenu {
+	float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font: 12px Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    width: 960px;
+    display: block;
+    line-height: 100%;
+    z-index: 20;
+    vertical-align: top;
 }
