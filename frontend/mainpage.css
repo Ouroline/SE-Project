@@ -42,10 +42,10 @@
     list-style: none;
     font: 12px Arial,Helvetica,sans-serif;
     text-transform: uppercase;
-    width: 960px;
+/*    width: 960px;*/
     display: block;
     line-height: 100%;
-    z-index: 20;
+/*    z-index: 20;*/
     vertical-align: top;
 }
 
@@ -54,4 +54,8 @@
     display: block;
     height: 30px;
     border-right: 0px solid #fff;
+}
+
+.btn-group-justified>.btn-group .btn {
+    width: 100%;
 }
