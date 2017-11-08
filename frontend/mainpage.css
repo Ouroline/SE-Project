@@ -48,3 +48,10 @@
     z-index: 20;
     vertical-align: top;
 }
+
+#menu-mainmenu li {
+    float: left;
+    display: block;
+    height: 30px;
+    border-right: 0px solid #fff;
+}
