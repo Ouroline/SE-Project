@@ -1,9 +1,11 @@
 <?php
-
+//dd("HELLOWORLD");
+try{
 	include 'admin/config.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+		
 		// username and password sent from Form
 		$username = $_POST['username'];
 		$password = $_POST['password'];
@@ -28,5 +30,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		mysqli_close($connect);
 		
 	}
+	else
+		var_dump("You will be redirected to mainpage");
+}
+catch(Exception $e)
+{
+	var_dump($e);
+}
 ?>
 
