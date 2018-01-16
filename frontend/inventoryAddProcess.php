@@ -24,36 +24,7 @@
 		echo "Information added";
 
 		$conn->close();
-
-
-			/**session_start();
-			$servername = "inventory";
-			$username = "root";
-			$password = "";
-
-			//Create Connection
-			$con = new mysqli($servername, $username, $password); 
-
-			//Check connection
-			if ($conn->connect_error) 
-			{
-				die("Connection Failed: " . $conn->connect_error);
-			}
-			else
-			{
-				echo "Connected Sucessfully";
-			}
-
-			//Insert data
-			$sql = "INSERT INTO user (itemName, itemAmount) VALUES ( '{$mysqli->real_escape_string($_POST['itemName'])}', '{$mysqli->real_escape_string($_POST['itemAmount'])}' )";
-			$INSERT = $mysqli->query($sql);
-
-			//Print response
-			if($INSERT)
-			{
-				echo
-			}
-			**/
+		
 		?>
     </BODY>
 </HTML>
