@@ -26,23 +26,17 @@
     }
 
     .logo{
-      float: left;
-      padding-left: 10%;
-      padding-top: 25px;
-      padding-bottom: 25px;
+    	float: left;
+    	padding-left: 50px;
     }
 
     .jumbotron{
-      background-image: url("image/background.png");
-      padding: 0px 0px 0px 0px;
+      background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/itCjTBE/light-and-dark-tech-gears-mechanism-motion-background-seamless-loop-video-animation-hd-1920x1080_spyfhu4x__F0000.png");
     }
 
-    .loginButton {
-      float: right;
-    }
-
-    .buttonSearch {
-      width: 50%;
+    img{
+    	width: 250px;
+    	height: 150px;
     }
 
     .column1{
@@ -61,98 +55,17 @@
       margin: 10px
     }
 
-     <title>Displaying MySQL Data in HTML Table</title>
-  <style type="text/css">
-    body {
-      font-size: 15px;
-      color: #343d44;
-      font-family: "segoe-ui", "open-sans", tahoma, arial;
-      padding: 0;
-      margin: 0;
-    }
-    table {
-      margin: auto;
-      font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
-      font-size: 12px;
-    }
-
-    h1 {
-      margin: 25px auto 0;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 17px;
-    }
-
-    table td {
-      transition: all .5s;
-    }
-    
-    /* Table */
-    .data-table {
-      border-collapse: collapse;
-      font-size: 14px;
-      min-width: 537px;
-    }
-
-    .data-table th, 
-    .data-table td {
-      border: 1px solid #e1edff;
-      padding: 7px 17px;
-    }
-    .data-table caption {
-      margin: 7px;
-    }
-
-    /* Table Header */
-    .data-table thead th {
-      background-color: #508abb;
-      color: #FFFFFF;
-      border-color: #6ea1cc !important;
-      text-transform: uppercase;
-    }
-
-    /* Table Body */
-    .data-table tbody td {
-      color: #353535;
-    }
-    .data-table tbody td:first-child,
-    .data-table tbody td:nth-child(4),
-    .data-table tbody td:last-child {
-      text-align: right;
-    }
-
-    .data-table tbody tr:nth-child(odd) td {
-      background-color: #f4fbff;
-    }
-    .data-table tbody tr:hover td {
-      background-color: #ffffa2;
-      border-color: #ffff0f;
-    }
-
-    /* Table Footer */
-    .data-table tfoot th {
-      background-color: #e5f5ff;
-      text-align: right;
-    }
-    .data-table tfoot th:first-child {
-      text-align: left;
-    }
-    .data-table tbody td:empty
-    {
-      background-color: #ffcccc;
-    }
-  </style>
   </style>
 </head>
 <body>
 
 <div class="jumbotron">
-  <div class="logo">
-    <img src="image/sjamotorLogo.png" height="30%" width="30%">
-  </div>
+	<div class="logo">
+  		<img src="https://www.doughamptonsautorepair.com/img/6241/102.png" height="120px" width="200px">
+  	</div>
   <div class="container text-center" style="padding-right: 100px">
-    <!-- <h1>Workshop</h1>      
-    <p>Bengkel</p> -->
+    <h1>Workshop</h1>      
+    <p>Bengkel</p>
   </div>
 </div>
 
@@ -168,11 +81,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="Mainpage.html">Home</a></li>
-        <li class="active"><a href="adminProducts.php">Products</a></li>
+        <li class="active"><a href="Mainpage.html">Home</a></li>
+        <li><a href="Products.html">Products</a></li>
         <li><a href="Services.html">Services</a></li>
         <li><a href="About.html">About Us</a></li>
         <li><a href="Contact.html">Contact Us</a></li>
+        <li><a href="logout.php">Logout</a></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
 <!--         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li> -->
@@ -188,15 +103,12 @@
 <div class="post-text">
 <br>
 
-<!--
 <div>
   <div class="addButton">
     <button type="button" class="btn btn-danger"><a href="#"></a>Edit</button>
   </div>
 </div>
 <br>
-
-
 
 <center>
 <table>
@@ -251,84 +163,13 @@
 </div>
 </div>
 </div>
-</div> 
--->
-
-<?php
-
-
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "inventory";
-
-  //Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  //Check connection
-  if ($conn->connect_error) 
-  {
-    die("Connection failed: " .$conn->connect_error);
-  }
-
-  $sql = "SELECT itemID, itemName, itemAmount, dateIn FROM stock";
-  $query = mysqli_query($conn, $sql);
-
-  if (!$query) 
-  {
-    die ('SQL Error: ' . mysqli_error($conn));
-  }
-
-?>
-
-<h1>SJA MOTOR DATABASE TABLE</h1>
-  <table class="data-table">
-    <caption class="title">Inventory</caption>
-    <thead>
-      <tr>
-        <th>Item ID</th>
-        <th>Item Name</th>
-        <th>Date In</th>
-        <th>Amount</th>
-      </tr>
-    </thead>
-
-<tbody>
-<?php
-  $id   = 1;
-  $total  = 0;
-  while ($row = mysqli_fetch_array($query))
-  {
-    $amount  = $row['itemAmount'] == 0 ? '' : number_format($row['itemAmount']);
-    echo '<tr>
-        <td>'.$id.'</td>
-        <td>'.$row['itemName'].'</td>
-        <td>'. date('F d, Y', strtotime($row['dateIn'])) . '</td>
-        <td>'.$amount.'</td>
-
-      </tr>';
-    $total += $row['itemAmount'];
-    $id++;
-  }
-?>
-</tbody>
-
-<tfoot>
-  <tr>
-    <th colspan="3">Total Items</th>
-    <th><?=number_format($total)?></th>
-    </tr>
-</tfoot>
-</table>
-<br>
-<br>
-
+</div>
 
 <footer class="container-fluid text-center">
-  <p>SJAMotor &copy; 2018</p>  
+  <p>Workshop Copyright</p>  
   <form class="form-inline">Search :
     <input type="email" class="form-control" size="50" placeholder="Search">
-    <buttonSearch type="button" class="btn btn-danger">Go</buttonSearch>
+    <button type="button" class="btn btn-danger">Go</button>
   </form>
 </footer>
 

@@ -27,24 +27,18 @@
     }
 
     .logo{
-      float: left;
-      padding-left: 10%;
-      padding-top: 25px;
-      padding-bottom: 25px;
+    	float: left;
+    	padding-left: 50px;
     }
 
     .jumbotron{
-      background-image: url("image/background.png");
-      padding: 0px 0px 0px 0px;
+      background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/itCjTBE/light-and-dark-tech-gears-mechanism-motion-background-seamless-loop-video-animation-hd-1920x1080_spyfhu4x__F0000.png");
     }
 
-    .loginButton {
-      float: right;
-    }
-
-    .buttonSearch {
-      width: 50%;
-    }
+/*    img{
+    	width: 200px;
+    	height: 120px;
+    }*/
 
     .column1{
     	margin: auto;
@@ -77,7 +71,7 @@
         background-color: #4CAF50;
         color: white;
         padding: 14px 20px;
-        margin: 8px 0px 8px 0px;
+        margin: 8px 0px 8px 1300px;
         border: none;
         cursor: pointer;
         width: 100%;
@@ -182,44 +176,159 @@
         }
     }
   </style>
+  <title>Displaying MySQL Data in HTML Table</title>
+	<style type="text/css">
+		body {
+			font-size: 15px;
+			color: #343d44;
+			font-family: "segoe-ui", "open-sans", tahoma, arial;
+			padding: 0;
+			margin: 0;
+		}
+		table {
+			margin: auto;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
+			font-size: 12px;
+		}
+
+		h1 {
+			margin: 25px auto 0;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 17px;
+		}
+
+		table td {
+			transition: all .5s;
+		}
+		
+		/* Table */
+		.data-table {
+			border-collapse: collapse;
+			font-size: 14px;
+			min-width: 537px;
+		}
+
+		.data-table th, 
+		.data-table td {
+			border: 1px solid #e1edff;
+			padding: 7px 17px;
+		}
+		.data-table caption {
+			margin: 7px;
+		}
+
+		/* Table Header */
+		.data-table thead th {
+			background-color: #508abb;
+			color: #FFFFFF;
+			border-color: #6ea1cc !important;
+			text-transform: uppercase;
+		}
+
+		/* Table Body */
+		.data-table tbody td {
+			color: #353535;
+		}
+		.data-table tbody td:first-child,
+		.data-table tbody td:nth-child(4),
+		.data-table tbody td:last-child {
+			text-align: right;
+		}
+
+		.data-table tbody tr:nth-child(odd) td {
+			background-color: #f4fbff;
+		}
+		.data-table tbody tr:hover td {
+			background-color: #ffffa2;
+			border-color: #ffff0f;
+		}
+
+		/* Table Footer */
+		.data-table tfoot th {
+			background-color: #e5f5ff;
+			text-align: right;
+		}
+		.data-table tfoot th:first-child {
+			text-align: left;
+		}
+		.data-table tbody td:empty
+		{
+			background-color: #ffcccc;
+		}
+	</style>
+	
 </head>
 <body>
 
 <div class="jumbotron">
 	<div class="logo">
-  		<img src="image/sjamotorLogo.png" height="30%" width="30%">
+  		<img src="https://www.doughamptonsautorepair.com/img/6241/102.png" height="120px" width="200px">
   	</div>
   <div class="container text-center" style="padding-right: 100px">
-    <!-- <h1>Workshop</h1>      
-    <p>Bengkel</p> -->
+    <h1>Workshop</h1>      
+    <p>Bengkel</p>
   </div>
 </div>
 
-	<nav class="navbar navbar-inverse">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>                        
-	      </button>
-	<!--       <a class="navbar-brand" href="#">Logo</a> -->
-	    </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav">
-	        <li><a href="Mainpage.html">Home</a></li>
-			<li><a href="Products.html">Products</a></li>
-			<li><a href="Services.html">Services</a></li>
-			<li class="active"><a href="About.html">About Us</a></li>
-			<li><a href="Contact.html">Contact Us</a></li>
-        </div>
-        
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+<!--       <a class="navbar-brand" href="#">Logo</a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="Mainpage.html">Home</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+      <!--   <li><a href="login.html">Login</a></li> -->
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-        <!-- Ending of Login Button -->
+        <div id="id01" class="modal">
+          
+          <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+              <label><b>Username</b></label><br>
+              <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+              <label><b>Password</b></label><br>
+              <input type="password" placeholder="Enter Password" name="psw" required><br>
+                
+              <button type="submit">Login</button><br>
+              <input type="checkbox" checked="checked"> Remember me
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+
         <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
         </script>
       </ul>
-
       <ul class="nav navbar-nav navbar-right">
 <!--         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li> -->
@@ -227,63 +336,79 @@
     </div>
   </div>
 </nav>
+<?php
 
-<div id="content"><div id="main-full">
-  <div id="main-2">
-    <div class="rpa">
-      <div class="Title" style="text-align:center;"><br><font size="6">Produk-Produk Mobil</font></div>
-        <div class="post-text">
-        <br>
-        <center>
-            <table id="id01" border="1">
-              <tr>
-                <th>Produk</th>
-                <th>Gambar</th>
-                <th>Status</th>
-              </tr>
-              <tr class="item">
-                <td>Ban</td>
-                <td><img src="image/tire.jpg" alt="Ban" width="200" height="120"></td>
-                <td>Out of Stock</td>
-              </tr>
-              <tr class="item">
-                <td>Oli</td>
-                <td><img src="image/oil.jpg" alt="Oli" width="200" height="120"></td>
-                <td>Out of Stock</td>
-              </tr>
-              <tr class="item">
-                <td>Suspensi</td>
-                <td><img src="image/suspension.jpg" alt="Suspensi" width="200" height="120"></td>
-                <td>In Stock</td>
-              </tr>
-              <tr class="item">
-                <td>Radiator</td>
-                <td><img src="image/radiator.jpg" alt="Radiator" width="200" height="120"></td>
-                <td>In Stock</td>
-              </tr>
-              <tr class="item">
-                <td>Lampu Depan</td>
-                <td><img src="image/headLamp.jpg" alt="Lampu Depan" width="200" height="120"></td>
-                <td>Out of Stock</td>
-              </tr>
-              <tr class="item">
-                <td>Lampu Belakang</td>
-                <td><img src="image/tailLight.jpg" alt="Lampu Belakang" width="200" height="120"></td>
-                <td>In Stock</td>
-              </tr>
-            </table>
-          </center>  
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "inventory";
+
+	//Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	//Check connection
+	if ($conn->connect_error) 
+	{
+		die("Connection failed: " .$conn->connect_error);
+	}
+
+	$sql = "SELECT itemID, itemName, itemAmount, dateIn FROM stock";
+	$query = mysqli_query($conn, $sql);
+
+	if (!$query) 
+	{
+		die ('SQL Error: ' . mysqli_error($conn));
+	}
+
+?>
+
+<h1>SJA MOTOR DATABASE TABLE</h1>
+	<table class="data-table">
+		<caption class="title">Inventory</caption>
+		<thead>
+			<tr>
+				<th>Item ID</th>
+				<th>Item Name</th>
+				<th>Date In</th>
+				<th>Amount</th>
+			</tr>
+		</thead>
+
+<tbody>
+<?php
+	$id 	= 1;
+	$total 	= 0;
+	while ($row = mysqli_fetch_array($query))
+	{
+		$amount  = $row['itemAmount'] == 0 ? '' : number_format($row['itemAmount']);
+		echo '<tr>
+				<td>'.$id.'</td>
+				<td>'.$row['itemName'].'</td>
+				<td>'. date('F d, Y', strtotime($row['dateIn'])) . '</td>
+				<td>'.$amount.'</td>
+			</tr>';
+		$total += $row['itemAmount'];
+		$id++;
+	}
+?>
+</tbody>
+
+<tfoot>
+	<tr>
+		<th colspan="3">Total Items</th>
+		<th><?=number_format($total)?></th>
+		</tr>
+</tfoot>
+</table>
+<br>
+<br>
 
 <footer class="container-fluid text-center">
-  <p>SJAMotor &copy; 2018</p>  
+  <p>Workshop Copyright</p>  
   <form class="form-inline">Search :
     <input oninput="w3.filterHTML('#id01', '.item', this.value)" size="50" placeholder="Search for names..">
-    <buttonSearch type="button" class="btn btn-danger">Go</buttonSearch>
+    <button type="button" class="btn btn-danger">Go</button>
   </form>
 </footer>
 
