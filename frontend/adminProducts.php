@@ -26,17 +26,23 @@
     }
 
     .logo{
-    	float: left;
-    	padding-left: 50px;
+      float: left;
+      padding-left: 10%;
+      padding-top: 25px;
+      padding-bottom: 25px;
     }
 
     .jumbotron{
-      background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/itCjTBE/light-and-dark-tech-gears-mechanism-motion-background-seamless-loop-video-animation-hd-1920x1080_spyfhu4x__F0000.png");
+      background-image: url("image/background.png");
+      padding: 0px 0px 0px 0px;
     }
 
-    img{
-    	width: 250px;
-    	height: 150px;
+    .loginButton {
+      float: right;
+    }
+
+    .buttonSearch {
+      width: 50%;
     }
 
     .column1{
@@ -54,7 +60,6 @@
     .Title{
       margin: 10px
     }
-
 
      <title>Displaying MySQL Data in HTML Table</title>
   <style type="text/css">
@@ -142,12 +147,12 @@
 <body>
 
 <div class="jumbotron">
-	<div class="logo">
-  		<img src="https://www.doughamptonsautorepair.com/img/6241/102.png" height="120px" width="200px">
-  	</div>
+  <div class="logo">
+    <img src="image/sjamotorLogo.png" height="30%" width="30%">
+  </div>
   <div class="container text-center" style="padding-right: 100px">
-    <h1>Workshop</h1>      
-    <p>Bengkel</p>
+    <!-- <h1>Workshop</h1>      
+    <p>Bengkel</p> -->
   </div>
 </div>
 
@@ -163,13 +168,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="Mainpage.html">Home</a></li>
-        <li><a href="Products.html">Products</a></li>
+        <li><a href="Mainpage.html">Home</a></li>
+        <li class="active"><a href="adminProducts.php">Products</a></li>
         <li><a href="Services.html">Services</a></li>
         <li><a href="About.html">About Us</a></li>
         <li><a href="Contact.html">Contact Us</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
 <!--         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li> -->
@@ -322,10 +325,10 @@
 
 
 <footer class="container-fluid text-center">
-  <p>Workshop Copyright</p>  
+  <p>SJAMotor &copy; 2018</p>  
   <form class="form-inline">Search :
     <input type="email" class="form-control" size="50" placeholder="Search">
-    <button type="button" class="btn btn-danger">Go</button>
+    <buttonSearch type="button" class="btn btn-danger">Go</buttonSearch>
   </form>
 </footer>
 
