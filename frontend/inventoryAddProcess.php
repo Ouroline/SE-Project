@@ -7,6 +7,8 @@
 	<BODY>
 		<?php
 
+		header("Location: inventory.html");
+
 		require 'connection.php';
 
 		$conn = Connect();
@@ -21,9 +23,13 @@
 			die("Couldn't enter data: ".$conn->error);
 		}
 
-		echo "Information added";
+	  	echo '<script>
+             alert("'.$msg.'");
+          </script>';
 
 		$conn->close();
+		
+		exit();
 		
 		?>
     </BODY>

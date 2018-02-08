@@ -386,7 +386,7 @@
 				<td>'.$id.'</td>
 				<td>'.$row['itemName'].'</td>
 				<td>'. date('F d, Y', strtotime($row['dateIn'])) . '</td>
-				<td>'.$amount.'</td>
+				<td>'.$amount.'</td> 
 			</tr>';
 		$total += $row['itemAmount'];
 		$id++;
